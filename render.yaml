@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: flaskLogin
+    env: node
+    plan: free
+    buildCommand: yarn --frozen-lockfile --prod=false && blitz build
+    startCommand: blitz start -p ${PORT}
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: devindi
+        generateValue: true
